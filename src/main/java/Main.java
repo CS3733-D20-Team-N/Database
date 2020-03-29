@@ -7,5 +7,6 @@ public class Main {
         System.out.println("Ivan Eroshenko");
         System.out.println("Seungho Lee");
         System.out.println("Nick Pelletier");
+        System.our.println("Nicholas Wood");
     }
 }
