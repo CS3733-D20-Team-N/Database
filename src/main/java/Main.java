@@ -6,8 +6,9 @@ public class Main {
         System.out.println("Tian Yu Fan");
         System.out.println("Ivan Eroshenko");
         System.out.println("Seungho Lee");
-        System.our.println("Nicholas Wood");
+        System.out.println("Nicholas Wood");
         System.out.println("Evan Llewellyn");
-        System.our.println("Nick Pelletier");
+        System.out.println("Nick Pelletier");
+        System.out.println("Michael Laks");
     }
 }
