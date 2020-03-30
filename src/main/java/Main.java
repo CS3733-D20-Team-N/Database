@@ -20,6 +20,8 @@ public class Main {
         
         // branches
         System.out.println("Branch - Ivan Eroshenko");
+
+        System.out.println("Testing Travis CI");
   }
 
 }
