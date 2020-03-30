@@ -1,4 +1,5 @@
 public class Main {
+<<<<<<< HEAD
     public static void main(String[] args) {
         System.out.println("Hello World!");
         System.out.println("Kaitlyn Fichtner");
@@ -11,6 +12,8 @@ public class Main {
         System.out.println("Evan Llewellyn");
         System.out.println("Nick Pelletier");
         System.out.println("Michael Laks");
-        System.out.println("Branch - Annie")
-    }
+        System.out.println("Branch - Annie");
+        System.out.println("Kaitlyn Branch");
+  }
+
 }
