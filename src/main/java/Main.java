@@ -17,9 +17,11 @@ public class Main {
         System.out.println("Michael Laks");
         System.out.println("Branch - Annie");
         System.out.println("Kaitlyn Branch");
-
+        
         // branches
         System.out.println("Branch - Ivan Eroshenko");
+
+        System.out.println("Testing Travis CI");
   }
 
 }
