@@ -2,6 +2,9 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+
+        // names
+
         System.out.println("Kaitlyn Fichtner");
         System.out.println("Noah Capucilli-Shatan");
         System.out.println("Tian Yu Fan");
@@ -14,6 +17,9 @@ public class Main {
         System.out.println("Michael Laks");
         System.out.println("Branch - Annie");
         System.out.println("Kaitlyn Branch");
+
+        // branches
+        System.out.println("Branch - Ivan Eroshenko");
   }
 
 }
