@@ -22,6 +22,7 @@ public class Main {
         System.out.println("Branch - Ivan Eroshenko");
         System.out.println("Branch - Noah CS");
         System.out.println("Branch - Nick Pelletier");
+        System.out.println("Branch - Nick Wood");
         System.out.println("Testing Travis CI");
   }
 
