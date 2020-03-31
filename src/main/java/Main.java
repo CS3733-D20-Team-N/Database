@@ -16,7 +16,6 @@ public class Main {
         System.out.println("Nick Pelletier");
         System.out.println("Michael Laks");
 
-
         
         // branches
         System.out.println("Branch - Ivan Eroshenko");
@@ -26,6 +25,7 @@ public class Main {
         System.out.println("Branch - Seungho Lee");
         System.out.println("Branch - Annie");
         System.out.println("Kaitlyn Branch");
+        System.out.println("Nicholas Wood - Commiter?");
         System.out.println("Testing Travis CI");
   }
 
