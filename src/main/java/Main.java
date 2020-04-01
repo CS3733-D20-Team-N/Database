@@ -18,7 +18,8 @@ public class Main {
         System.out.println("Branch - Annie");
         System.out.println("Kaitlyn Branch");
         System.out.println("Nicholas Wood - Commiter?");
-        
+        System.out.println("Nick Wood Commit for Contributor");
+
         // branches
         System.out.println("Branch - Ivan Eroshenko");
         System.out.println("Branch - Noah CS");
