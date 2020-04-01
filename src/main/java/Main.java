@@ -18,11 +18,18 @@ public class Main {
         System.out.println("Branch - Annie");
         System.out.println("Kaitlyn Branch");
         System.out.println("NoahCS Again");
-        
-        // branches
         System.out.println("Branch - Ivan Eroshenko");
         System.out.println("Branch - Noah CS");
+        System.out.println("Branch - Nick Pelletier");
+        System.out.println("Branch - Nick Wood");
+        System.out.println("Branch - Seungho Lee");
+        System.out.println("Branch - Annie");
+        System.out.println("Kaitlyn Branch");
+        System.out.println("Nicholas Wood - Commiter?");
+        System.out.println("Branch - Evan Llewellyn");
+        System.out.println("Branch - Matt Johannesen");
         System.out.println("Testing Travis CI");
   }
+
 
 }
