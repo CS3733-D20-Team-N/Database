@@ -113,14 +113,16 @@ public class Main {
     }
   }
 
-  private void updatePhoneNumber(){
+  private void updatePhoneNumber() throws Exception {
     Scanner inp = new Scanner(System.in);
     System.out.println("Enter the name of the museum you would like to change: ");
     String museum = inp.next();
     System.out.println("Enter the new phone number with dashes: ");
     String num = inp.next();
 
-    String q = "UPDATE Museum";
+    String q = "UPDATE Museum SET PhoneNum = " + num +
+            "WHERE Name = " + museum;
 
+    s_object.executeQuery(q);
   }
 }
