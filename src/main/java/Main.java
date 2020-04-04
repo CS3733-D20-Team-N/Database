@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -89,20 +90,30 @@ public class Main {
             + "('The Night Watch', 5 , 'Rembrandt')";
     s_object.execute(Query);
     System.out.println("Noah's Inserts");
+
+    updatePhoneNumber();
+    // paintings();
+    museumInfo();
   }
 
-  private static void paintings() throws Exception{
+  private static void paintings() throws Exception {
     String museumQuery = "SELECT Id, Name FROM Museum";
+    LinkedList<String> names = new LinkedList<String>();
+    LinkedList<String> ids = new LinkedList<String>();
     String paintQuery;
     ResultSet paintRs;
     String m_Id;
     ResultSet rs = s_object.executeQuery(museumQuery);
     while (rs.next()) {
-      m_Id = rs.getString("Id");
-      System.out.println("Name: " + rs.getString("Name"));
-      paintQuery = "SELECT * FROM Paintings WHERE m_Id = " + m_Id;
+      ids.add(rs.getString("Id"));
+      names.add(rs.getString("name"));
+    }
+    while (names.size() > 0) {
+      System.out.println("Name: " + names.remove());
+      m_Id = ids.remove();
+      paintQuery = "SELECT * FROM PAINTING WHERE m_Id =" + m_Id;
       paintRs = s_object.executeQuery(paintQuery);
-      while(paintRs.next()){
+      while (paintRs.next()) {
         System.out.println("\tTitle: " + paintRs.getString("Title"));
         System.out.println("\tp_Id: " + paintRs.getString("p_Id"));
         System.out.println("\tm_Id: " + paintRs.getString("m_Id"));
@@ -123,19 +134,19 @@ public class Main {
     }
   }
 
-  private void updatePhoneNumber() throws Exception {
+  private static void updatePhoneNumber() throws Exception {
     Scanner inp = new Scanner(System.in);
     System.out.println("Enter the name of the museum you would like to change: ");
     String museum = inp.next();
     System.out.println("Enter the new phone number with dashes: ");
     String num = inp.next();
 
-    String q = "UPDATE Museum SET PhoneNum = " + num + "WHERE Name = " + museum;
+    String q = "UPDATE Museum SET PhoneNum = '" + num + "' WHERE Name = '" + museum + "'";
 
-    s_object.executeQuery(q);
-  }
-
-  private void exit() {
-    return;
+    try {
+      s_object.executeUpdate(q);
+    } catch (SQLException e) {
+      System.out.println("Invalid entry");
+    }
   }
 }
