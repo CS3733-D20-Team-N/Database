@@ -11,6 +11,19 @@ public class Main {
   private static Statement s_object;
 
   public static void main(String[] args) throws Exception {
+    if (args.length < 2 || args.length > 3) {
+      System.out.println("Usage: Ndb <username> <password> <option>");
+      System.exit(0);
+    }
+    if (args.length < 3) {
+      System.out.println(
+          "Options:\n1-Report Museum Information"
+              + "\n2-Report Paintings in Museum"
+              + "\n3-Update Museum Phone Number"
+              + "\n4-Exit Program");
+      System.exit(0);
+    }
+
     String Query;
     Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
     String URL = "jdbc:derby:memory:MuseumDB;create=true";
@@ -28,7 +41,7 @@ public class Main {
             + "NumPainting INT NOT NULL,"
             + "PRIMARY Key (Id))";
     s_object.execute(Query);
-    System.out.println("Museum Table Created");
+    // System.out.println("Museum Table Created");
 
     Query =
         "CREATE  TABLE Painting("
@@ -38,7 +51,7 @@ public class Main {
             + "Creator VARCHAR(255) NOT NULL,"
             + "PRIMARY Key(p_Id))";
     s_object.execute(Query);
-    System.out.println("Painting Table Created");
+    // System.out.println("Painting Table Created");
 
     Query =
         "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES "
@@ -60,7 +73,7 @@ public class Main {
             + "('Lights in the Night', 2, 'Leonid Afremov'),"
             + "('The Moment of Love', 3, 'Leonid Afremov')";
     s_object.execute(Query);
-    System.out.println("Nick's Insert Statement Worked");
+    // System.out.println("Nick's Insert Statement Worked");
 
     Query =
         "INSERT INTO Painting("
@@ -74,7 +87,7 @@ public class Main {
             + "('Nick W', 5 , 'Nick W'),"
             + "('Michael', 1 , 'Michael')";
     s_object.execute(Query);
-    System.out.println("Chris's Insert Statement Worked");
+    // System.out.println("Chris's Insert Statement Worked");
 
     Query =
         "INSERT INTO Painting("
@@ -89,11 +102,37 @@ public class Main {
             + "('The Birth of Venus', 4 , 'Sandro Botticelli'),"
             + "('The Night Watch', 5 , 'Rembrandt')";
     s_object.execute(Query);
-    System.out.println("Noah's Inserts");
+    // System.out.println("Noah's Inserts");
 
-    updatePhoneNumber();
+    // updatePhoneNumber();
     // paintings();
-    museumInfo();
+    // museumInfo();
+    try {
+      int option = Integer.parseInt(args[3]);
+      switch (option) {
+        case 1:
+          museumInfo();
+          break;
+        case 2:
+          paintings();
+          break;
+        case 3:
+          updatePhoneNumber();
+          break;
+        case 4:
+          System.exit(0);
+          break;
+        default:
+          System.out.println(
+              "Options:\n1-Report Museum Information"
+                  + "\n2-Report Paintings in Museum"
+                  + "\n3-Update Museum Phone Number"
+                  + "\n4-Exit Program");
+          System.exit(0);
+      }
+    } catch (NumberFormatException e) {
+      System.out.println("The option must be a number");
+    }
   }
 
   private static void paintings() throws Exception {
