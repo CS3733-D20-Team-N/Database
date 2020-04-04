@@ -96,8 +96,14 @@ public class Main {
     System.out.println("Noah's Inserts");
   }
 
-  private void secondOption(String Query) throws Exception {
-    ResultSet rs = s_object.executeQuery(Query);
+  private static void paintings(){
+    String paintQuery = "SELECT * FROM Painting";
+    //ResultSet rs =
+  }
+
+  private static void museumInfo() throws Exception {
+    String museumQuery = "SELECT * FROM Museum";
+    ResultSet rs = s_object.executeQuery(museumQuery);
     while (rs.next()) {
       System.out.println("Id: " + rs.getString("Id"));
       System.out.println("Name: " + rs.getString("Name"));
