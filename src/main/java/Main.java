@@ -34,5 +34,16 @@ public class Main {
             + "PRIMARY Key(p_Id))";
     s_object.execute(Query);
     System.out.println("Painting Table Created");
+
+    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Smithsonian', '866-868-7774', 4)";
+
+    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('American Museum of Natural History', '212-769-5151', 4)";
+
+    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Metropolitan Museum of Art', '212-535-7710', 4)";
+
+    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Louvre', '014-020-5104', 4)";
+
+    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Guggenheim', '212-423-4355', 4)";
+
   }
 }
