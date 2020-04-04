@@ -96,9 +96,9 @@ public class Main {
     System.out.println("Noah's Inserts");
   }
 
-  private static void paintings(){
+  private static void paintings() {
     String paintQuery = "SELECT * FROM Painting";
-    //ResultSet rs =
+    // ResultSet rs =
   }
 
   private static void museumInfo() throws Exception {
@@ -120,9 +120,12 @@ public class Main {
     System.out.println("Enter the new phone number with dashes: ");
     String num = inp.next();
 
-    String q = "UPDATE Museum SET PhoneNum = " + num +
-            "WHERE Name = " + museum;
+    String q = "UPDATE Museum SET PhoneNum = " + num + "WHERE Name = " + museum;
 
     s_object.executeQuery(q);
+  }
+
+  private void exit() {
+    return;
   }
 }
