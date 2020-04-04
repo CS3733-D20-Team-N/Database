@@ -1,4 +1,9 @@
 import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Scanner;
 
 public class Main {
 
@@ -121,5 +126,21 @@ public class Main {
       System.out.println("Number of Paintings: " + rs.getString("NumPainting"));
       System.out.println(" ");
     }
+  }
+
+  private void updatePhoneNumber() throws Exception {
+    Scanner inp = new Scanner(System.in);
+    System.out.println("Enter the name of the museum you would like to change: ");
+    String museum = inp.next();
+    System.out.println("Enter the new phone number with dashes: ");
+    String num = inp.next();
+
+    String q = "UPDATE Museum SET PhoneNum = " + num + "WHERE Name = " + museum;
+
+    s_object.executeQuery(q);
+  }
+
+  private void exit() {
+    return;
   }
 }
