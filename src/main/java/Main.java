@@ -108,7 +108,7 @@ public class Main {
     // paintings();
     // museumInfo();
     try {
-      int option = Integer.parseInt(args[3]);
+      int option = Integer.parseInt(args[2]);
       switch (option) {
         case 1:
           museumInfo();
