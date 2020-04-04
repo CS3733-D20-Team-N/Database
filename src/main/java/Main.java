@@ -29,19 +29,36 @@ public class Main {
         "CREATE  TABLE Painting("
             + "Title VARCHAR(255) NOT NULL,"
             + "p_Id INT NOT NULL  GENERATED ALWAYS AS IDENTITY,"
-            + "m_ID INT NOT NULL REFERENCES Museum(Id),"
+            + "m_Id INT NOT NULL REFERENCES Museum(Id),"
             + "Creator VARCHAR(255) NOT NULL,"
             + "PRIMARY Key(p_Id))";
     s_object.execute(Query);
     System.out.println("Painting Table Created");
 
-    Query = "INSERT INTO Painting VALUES ('Obama', 2, 'Amit Shimoni');" +
-            "INSERT INTO Painting VALUES ('Bold and Brash', 3, 'Squidward Tentacles');" +
-            "INSERT INTO Painting VALUES ('Painting L', 5, 'Artist');" +
-            "INSERT INTO Painting VALUES ('Starry Night', 1, 'Vincent Van Gogh');" +
-            "INSERT INTO Painting VALUES ('Sunflowers', 4, 'Vincent Van Gogh');" +
-            "INSERT INTO Painting VALUES ('X', 3, 'The Artist');" +
-            "INSERT INTO Painting VALUES ('Lights in the Night', 2, 'Leonid Afremov');" +
-            "INSERT INTO Painting VALUES ('The Moment of Love', 1, 'Leonid Afremov');";
+
+    Query = "INSERT INTO Painting (Title, p_Id, Creator) VALUES" +
+            "('Obama', 2, 'Amit Shimoni')," +
+            "('Bold and Brash', 3, 'Squidward Tentacles')," +
+            "('Painting L', 5, 'Artist')," +
+            "('Starry Night', 1, 'Vincent Van Gogh')," +
+            "('Sunflowers', 4, 'Vincent Van Gogh')," +
+            "('X', 3, 'The Artist')," +
+            "('Lights in the Night', 2, 'Leonid Afremov')," +
+            "('The Moment of Love', 1, 'Leonid Afremov')";
+    s_object.execute(Query);
+    System.out.println("Nick's Insert Statement Worked");
+
+    Query = "INSERT INTO Painting(" +
+            "Title, p_Id, m_Id, Creator) VALUES" +
+            "('Chris', 19, , 'Chris')" +
+            "('Noah', 20, , 'Noah')" +
+            "('Nick P', 21, , 'Nick P')" +
+            "('Annie', 22, , 'Annie')" +
+            "('Ivan', 23, , 'Ivan')" +
+            "('Evan', 24, , 'Evan')" +
+            "('Nick W', 25, , 'Nick W')" +
+            "('Michael', 26, , 'Michael')";
+    s_object.execute(Query);
+    System.out.println("Chris's Insert Statement Worked");
   }
 }
