@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
         "CREATE TABLE Museum ("
             + "Id INT NOT NULL GENERATED ALWAYS AS IDENTITY,"
             + "Name VARCHAR(255) NOT NULL,"
-            + "PhoneNum VARCHAR(10) NOT NULL,"
+            + "PhoneNum VARCHAR(20) NOT NULL,"
             + "NumPainting INT NOT NULL,"
             + "PRIMARY Key (Id))";
     s_object.execute(Query);
@@ -35,41 +36,60 @@ public class Main {
     s_object.execute(Query);
     System.out.println("Painting Table Created");
 
+    Query =
+        "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES "
+            + "('Smithsonian', '866-868-7774', 4),"
+            + "('American Museum of Natural History', '212-769-5151', 4),"
+            + "('Metropolitan Museum of Art', '212-535-7710', 4),"
+            + "('Louvre', '014-020-5104', 4),"
+            + "('Guggenheim', '212-423-4355', 4)";
 
-    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Smithsonian', '866-868-7774', 4)";
-
-    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('American Museum of Natural History', '212-769-5151', 4)";
-
-    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Metropolitan Museum of Art', '212-535-7710', 4)";
-
-    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Louvre', '014-020-5104', 4)";
-
-    Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Guggenheim', '212-423-4355', 4)";
-
-    Query = "INSERT INTO Painting (Title, m_Id, Creator) VALUES" +
-            "('Obama', 2, 'Amit Shimoni')," +
-            "('Bold and Brash', 3, 'Squidward Tentacles')," +
-            "('Painting L', 5, 'Artist')," +
-            "('Starry Night', 1, 'Vincent Van Gogh')," +
-            "('Sunflowers', 4, 'Vincent Van Gogh')," +
-            "('X', 3, 'The Artist')," +
-            "('Lights in the Night', 2, 'Leonid Afremov')," +
-            "('The Moment of Love', 1, 'Leonid Afremov')";
+    s_object.execute(Query);
+    Query = "SELECT Id FROM Museum";
+    ResultSet rs = s_object.executeQuery(Query);
+    while (rs.next()) {
+      System.out.println(rs.getInt("Id"));
+    }
+    Query =
+        "INSERT INTO Painting (Title, m_Id, Creator) VALUES"
+            + "('Obama', 1, 'Amit Shimoni'),"
+            + "('Bold and Brash', 2, 'Squidward Tentacles'),"
+            + "('Painting L', 3, 'Artist'),"
+            + "('Starry Night', 4, 'Vincent Van Gogh'),"
+            + "('Sunflowers', 5, 'Vincent Van Gogh'),"
+            + "('X', 1, 'The Artist'),"
+            + "('Lights in the Night', 2, 'Leonid Afremov'),"
+            + "('The Moment of Love', 3, 'Leonid Afremov')";
     s_object.execute(Query);
     System.out.println("Nick's Insert Statement Worked");
 
-    Query = "INSERT INTO Painting(" +
-            "Title, p_Id, m_Id, Creator) VALUES" +
-            "('Chris', 19, , 'Chris')" +
-            "('Noah', 20, , 'Noah')" +
-            "('Nick P', 21, , 'Nick P')" +
-            "('Annie', 22, , 'Annie')" +
-            "('Ivan', 23, , 'Ivan')" +
-            "('Evan', 24, , 'Evan')" +
-            "('Nick W', 25, , 'Nick W')" +
-            "('Michael', 26, , 'Michael')";
+    Query =
+        "INSERT INTO Painting("
+            + "Title, m_Id, Creator) VALUES"
+            + "('Chris', 4, 'Chris'),"
+            + "('Noah', 5, 'Noah'),"
+            + "('Nick P', 1, 'Nick P'),"
+            + "('Annie', 2, 'Annie'),"
+            + "('Ivan', 3 , 'Ivan'),"
+            + "('Evan', 4 , 'Evan'),"
+            + "('Nick W', 5 , 'Nick W'),"
+            + "('Michael', 1 , 'Michael')";
     s_object.execute(Query);
     System.out.println("Chris's Insert Statement Worked");
 
+    Query =
+        "INSERT INTO Painting("
+            + "Title, m_Id, Creator) VALUES"
+            + "('Mona Lisa', 2, 'Leonardo Da Vinci'),"
+            + "('The Last Supper', 3, 'Vincent Van Gogh'),"
+            + "('Girl with a Pearl Earring', 4, 'Johannes Vermeer'),"
+            + "('The Kiss', 5, 'Gustav Klimt'),"
+            + "('Cafe Terrace at Night', 1 , 'Vincent van Gogh'),"
+            + "('American Gothic', 2 , 'Grant Wood'),"
+            + "('Guernica', 3 , 'Pablo Picasso'),"
+            + "('The Birth of Venus', 4 , 'Sandro Botticelli'),"
+            + "('The Night Watch', 5 , 'Rembrandt')";
+    s_object.execute(Query);
+    System.out.println("Noah's Inserts");
   }
 }
