@@ -36,7 +36,7 @@ public class Main {
     System.out.println("Painting Table Created");
 
 
-    Query = "INSERT INTO Painting (Title, p_Id, Creator) VALUES" +
+    Query = "INSERT INTO Painting (Title, m_Id, Creator) VALUES" +
             "('Obama', 2, 'Amit Shimoni')," +
             "('Bold and Brash', 3, 'Squidward Tentacles')," +
             "('Painting L', 5, 'Artist')," +
