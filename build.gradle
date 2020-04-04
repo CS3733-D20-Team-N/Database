@@ -105,6 +105,10 @@ jacocoTestCoverageVerification {
     }
 }
 
+run{
+    standardInput = System.in
+}
+
 check.dependsOn jacocoTestCoverageVerification
 jacocoTestCoverageVerification.dependsOn jacocoTestReport
 compileJava.dependsOn 'spotlessApply'
