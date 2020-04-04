@@ -1,40 +1,38 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+  public static void main(String[] args) throws Exception {
+    String Query;
+    Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+    String URL = "jdbc:derby:memory:MuseumDB;create=true";
 
-        // names
+    Connection c_object;
+    c_object = DriverManager.getConnection(URL);
 
-        System.out.println("Kaitlyn Fichtner");
-        System.out.println("Noah Capucilli-Shatan");
-        System.out.println("Tian Yu Fan");
-        System.out.println("Ivan Eroshenko");
-        System.out.println("Seungho Lee");
-        System.out.println("Nicholas Wood");
-        System.out.println("Matt Johannesen");
-        System.out.println("Evan Llewellyn");
-        System.out.println("Nick Pelletier");
-        System.out.println("Michael Laks");
-        System.out.println("Branch - Annie");
-        System.out.println("Kaitlyn Branch");
-        System.out.println("Nicholas Wood - Commiter?");
-        System.out.println("Nick Wood Commit for Contributor");
-        System.out.println("Noah Contributor");
-        // branches
-        System.out.println("NoahCS Again");
+    Statement s_object;
+    s_object = c_object.createStatement();
 
-        System.out.println("Branch - Ivan Eroshenko");
-        System.out.println("Branch - Noah CS");
-        System.out.println("Branch - Nick Pelletier");
-        System.out.println("Branch - Nick Wood");
-        System.out.println("Branch - Seungho Lee");
-        System.out.println("Branch - Annie");
-        System.out.println("Kaitlyn Branch");
-        System.out.println("Nicholas Wood - Commiter?");
-        System.out.println("Branch - Evan Llewellyn");
-        System.out.println("Branch - Matt Johannesen");
-        System.out.println("Testing Travis CI");
+    Query =
+        "CREATE TABLE Museum ("
+            + "Id INT NOT NULL GENERATED ALWAYS AS IDENTITY,"
+            + "Name VARCHAR(255) NOT NULL,"
+            + "PhoneNum VARCHAR(10) NOT NULL,"
+            + "NumPainting INT NOT NULL,"
+            + "PRIMARY Key (Id))";
+    s_object.execute(Query);
+    System.out.println("Museum Table Created");
+
+    Query =
+        "CREATE  TABLE Painting("
+            + "Title VARCHAR(255) NOT NULL,"
+            + "p_Id INT NOT NULL  GENERATED ALWAYS AS IDENTITY,"
+            + "m_ID INT NOT NULL REFERENCES Museum(Id),"
+            + "Creator VARCHAR(255) NOT NULL,"
+            + "PRIMARY Key(p_Id))";
+    s_object.execute(Query);
+    System.out.println("Painting Table Created");
   }
-
-
 }
