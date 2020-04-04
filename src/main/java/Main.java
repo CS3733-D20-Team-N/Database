@@ -34,5 +34,14 @@ public class Main {
             + "PRIMARY Key(p_Id))";
     s_object.execute(Query);
     System.out.println("Painting Table Created");
+
+    Query = "INSERT INTO Painting VALUES ('Obama', 2, 'Amit Shimoni');" +
+            "INSERT INTO Painting VALUES ('Bold and Brash', 3, 'Squidward Tentacles');" +
+            "INSERT INTO Painting VALUES ('Painting L', 5, 'Artist');" +
+            "INSERT INTO Painting VALUES ('Starry Night', 1, 'Vincent Van Gogh');" +
+            "INSERT INTO Painting VALUES ('Sunflowers', 4, 'Vincent Van Gogh');" +
+            "INSERT INTO Painting VALUES ('X', 3, 'The Artist');" +
+            "INSERT INTO Painting VALUES ('Lights in the Night', 2, 'Leonid Afremov');" +
+            "INSERT INTO Painting VALUES ('The Moment of Love', 1, 'Leonid Afremov');";
   }
 }
