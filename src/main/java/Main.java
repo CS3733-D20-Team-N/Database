@@ -92,4 +92,10 @@ public class Main {
     s_object.execute(Query);
     System.out.println("Noah's Inserts");
   }
+
+  private static void paintings(){
+    String paintQuery = "SELECT * FROM Painting";
+    //ResultSet rs =
+  }
+
 }
