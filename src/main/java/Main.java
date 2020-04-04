@@ -46,7 +46,7 @@ public class Main {
 
     Query = "INSERT INTO Museum (Name, PhoneNum, NumPainting) VALUES ('Guggenheim', '212-423-4355', 4)";
 
-    Query = "INSERT INTO Painting (Title, p_Id, Creator) VALUES" +
+    Query = "INSERT INTO Painting (Title, m_Id, Creator) VALUES" +
             "('Obama', 2, 'Amit Shimoni')," +
             "('Bold and Brash', 3, 'Squidward Tentacles')," +
             "('Painting L', 5, 'Artist')," +
