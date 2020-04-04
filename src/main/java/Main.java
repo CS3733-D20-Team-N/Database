@@ -1,9 +1,8 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class Main {
+
+  private static Statement s_object;
 
   public static void main(String[] args) throws Exception {
     String Query;
@@ -13,7 +12,6 @@ public class Main {
     Connection c_object;
     c_object = DriverManager.getConnection(URL);
 
-    Statement s_object;
     s_object = c_object.createStatement();
 
     Query =
@@ -98,4 +96,15 @@ public class Main {
     //ResultSet rs =
   }
 
+  private static void museumInfo() throws Exception {
+    String museumQuery = "SELECT * FROM Museum";
+    ResultSet rs = s_object.executeQuery(museumQuery);
+    while (rs.next()) {
+      System.out.println("Id: " + rs.getString("Id"));
+      System.out.println("Name: " + rs.getString("Name"));
+      System.out.println("Phone Number: " + rs.getString("PhoneNum"));
+      System.out.println("Number of Paintings: " + rs.getString("NumPainting"));
+      System.out.println(" ");
+    }
+  }
 }
