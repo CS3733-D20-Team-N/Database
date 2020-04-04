@@ -48,11 +48,6 @@ public class Main {
             + "('Guggenheim', '212-423-4355', 4)";
 
     s_object.execute(Query);
-    Query = "SELECT Id FROM Museum";
-    ResultSet rs = s_object.executeQuery(Query);
-    while (rs.next()) {
-      System.out.println(rs.getInt("Id"));
-    }
     Query =
         "INSERT INTO Painting (Title, m_Id, Creator) VALUES"
             + "('Obama', 1, 'Amit Shimoni'),"
