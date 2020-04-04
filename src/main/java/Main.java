@@ -29,10 +29,24 @@ public class Main {
         "CREATE  TABLE Painting("
             + "Title VARCHAR(255) NOT NULL,"
             + "p_Id INT NOT NULL  GENERATED ALWAYS AS IDENTITY,"
-            + "m_ID INT NOT NULL REFERENCES Museum(Id),"
+            + "m_Id INT NOT NULL REFERENCES Museum(Id),"
             + "Creator VARCHAR(255) NOT NULL,"
             + "PRIMARY Key(p_Id))";
     s_object.execute(Query);
     System.out.println("Painting Table Created");
+
+    Query = "INSERT INTO Painting(" +
+            "Title, p_Id, m_Id, Creator) VALUES" +
+            "('Chris', 19, , 'Chris')" +
+            "('Noah', 20, , 'Noah')" +
+            "('Nick P', 21, , 'Nick P')" +
+            "('Annie', 22, , 'Annie')" +
+            "('Ivan', 23, , 'Ivan')" +
+            "('Evan', 24, , 'Evan')" +
+            "('Nick W', 25, , 'Nick W')" +
+            "('Michael', 26, , 'Michael')";
+    s_object.execute(Query);
+    System.out.println("Chris's Insert Statement Worked");
+
   }
 }
