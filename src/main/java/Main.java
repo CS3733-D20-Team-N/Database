@@ -176,9 +176,9 @@ public class Main {
   private static void updatePhoneNumber() throws Exception {
     Scanner inp = new Scanner(System.in);
     inp.useDelimiter("\n");
-    System.out.println("Enter the name of the museum you would like to change: ");
+    System.out.print("Enter the name of the museum you would like to change: ");
     String museum = inp.next();
-    System.out.println("Enter the new phone number with dashes: ");
+    System.out.print("Enter the new phone number with dashes: ");
     String num = inp.next();
 
     String q = "UPDATE Museum SET PhoneNum = '" + num + "' WHERE Name = '" + museum + "'";
